@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c9b6b6649e5e7b046a897399604b62dc
+guid: 9c9d761f2a674ad4aab29be6d189cab2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,10 +45,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wall_0000
+      name: RuleTileTemplateWall2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 64
-        height: 64
+        y: 9
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 373d88a827b45aa4897093897f102bad
-      internalID: 404449234
+      spriteID: fdce64fafbd913345a27146e33d62208
+      internalID: 1920926902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_0001
+      name: RuleTileTemplateWall2_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
+        x: 3
+        y: 9
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54068eab277c73344a9993df9e10d2d0
-      internalID: -1550884290
+      spriteID: bcfc9427f3439f54dafb90b604f00a39
+      internalID: -896999879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_0010
+      name: RuleTileTemplateWall2_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
+        x: 6
+        y: 9
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3774e9adf618f6b4f8df6e237fb4f879
-      internalID: 760726044
+      spriteID: ad84313c9f391ae4abc657fd9ac3c2c0
+      internalID: 307113976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_0011
+      name: RuleTileTemplateWall2_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
-        height: 64
+        x: 9
+        y: 9
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,104 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 740648e31480ce94b9efe6beb5bd85d4
-      internalID: 895390638
+      spriteID: 05ab7d79ff4df014794beb3548911be7
+      internalID: -284231392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_0100
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab84b9442558a0f459cfe7ae84507505
-      internalID: 37455225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wall_0101
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf0da1a2839bf5846bc029b9a8d43e18
-      internalID: 987866755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wall_0110
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e4ec56a58402f14d8139b2c8e9c6014
-      internalID: 1744517496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wall_0111
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7c4aaa174779e4469b28126607c9d65
-      internalID: -408424948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wall_1000
+      name: RuleTileTemplateWall2_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 64
-        height: 64
+        y: 6
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7132bd6af190c4f48afc6e149f8311aa
-      internalID: -118337819
+      spriteID: f2dfd111253030c4a9c1dbb0b1f4aad3
+      internalID: -460965600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_1001
+      name: RuleTileTemplateWall2_5
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 3
+        y: 6
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c7c375bd5236094f89dad4768251bab
-      internalID: -151313343
+      spriteID: e91822cbbfbe3ed439539f6727e0fb77
+      internalID: 2092896048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_1010
+      name: RuleTileTemplateWall2_6
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
+        x: 6
+        y: 6
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9249543ea55f7c3438e6bb634b4283f0
-      internalID: -1477736652
+      spriteID: e75be67095913d943b0c91783e3772ae
+      internalID: 153407971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_1011
+      name: RuleTileTemplateWall2_7
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
+        x: 9
+        y: 6
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +284,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3943cb0331be744187a2f6045ea73bd
-      internalID: 2118270686
+      spriteID: 7fdc690cdbf4a1e4d8ef8685cc56d3de
+      internalID: -1314234021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_1100
+      name: RuleTileTemplateWall2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb942c77af1025940807d14d2bc4d517
+      internalID: -1810823805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuleTileTemplateWall2_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810c8bfb98159554794112041efdcb86
+      internalID: 948960003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuleTileTemplateWall2_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 3
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0096e519c920d94c97593b83c292c33
+      internalID: -1287469371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuleTileTemplateWall2_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 3
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e647bfe0886f0447bb970b47e153520
+      internalID: 1634291521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RuleTileTemplateWall2_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,20 +389,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83cbeb95b39025b40b4137930f6e67d8
-      internalID: -1208918981
+      spriteID: 7715f5eff4489744c92d6617adabe3e2
+      internalID: -2095440494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_1101
+      name: RuleTileTemplateWall2_13
       rect:
         serializedVersion: 2
-        x: 64
+        x: 3
         y: 0
-        width: 64
-        height: 64
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,20 +410,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 803717dd9f28a124998506994f1fb27f
-      internalID: 1628867456
+      spriteID: d78341b8be619b3449c9c852ae4a2925
+      internalID: 1611656812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_1110
+      name: RuleTileTemplateWall2_14
       rect:
         serializedVersion: 2
-        x: 128
+        x: 6
         y: 0
-        width: 64
-        height: 64
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,20 +431,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2984ada9961123348aeda52e5ec835ff
-      internalID: -2000372570
+      spriteID: e3ad88a81f320534a9cc66859a1cb41e
+      internalID: -1203658220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall_1111
+      name: RuleTileTemplateWall2_15
       rect:
         serializedVersion: 2
-        x: 192
+        x: 9
         y: 0
-        width: 64
-        height: 64
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,8 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bba3dd72ecedc545aebd81d98b20133
-      internalID: -1636718976
+      spriteID: c0667fb9f00856f40be3c609681ab789
+      internalID: -173128035
       vertices: []
       indices: 
       edges: []
@@ -469,22 +469,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wall_0000: 404449234
-      Wall_0001: -1550884290
-      Wall_0010: 760726044
-      Wall_0011: 895390638
-      Wall_0100: 37455225
-      Wall_0101: 987866755
-      Wall_0110: 1744517496
-      Wall_0111: -408424948
-      Wall_1000: -118337819
-      Wall_1001: -151313343
-      Wall_1010: -1477736652
-      Wall_1011: 2118270686
-      Wall_1100: -1208918981
-      Wall_1101: 1628867456
-      Wall_1110: -2000372570
-      Wall_1111: -1636718976
+      RuleTileTemplateWall2_0: 1920926902
+      RuleTileTemplateWall2_1: -896999879
+      RuleTileTemplateWall2_10: -1287469371
+      RuleTileTemplateWall2_11: 1634291521
+      RuleTileTemplateWall2_12: -2095440494
+      RuleTileTemplateWall2_13: 1611656812
+      RuleTileTemplateWall2_14: -1203658220
+      RuleTileTemplateWall2_15: -173128035
+      RuleTileTemplateWall2_2: 307113976
+      RuleTileTemplateWall2_3: -284231392
+      RuleTileTemplateWall2_4: -460965600
+      RuleTileTemplateWall2_5: 2092896048
+      RuleTileTemplateWall2_6: 153407971
+      RuleTileTemplateWall2_7: -1314234021
+      RuleTileTemplateWall2_8: -1810823805
+      RuleTileTemplateWall2_9: 948960003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

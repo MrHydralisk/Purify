@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
+    private StatsHandler statsHandler;
 
     private Vector3 moveDelta;
 
@@ -16,6 +18,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        statsHandler = GetComponent<StatsHandler>();
     }
 
     private void Movement()
@@ -52,5 +55,41 @@ public class Player : MonoBehaviour
         {
             entity.collideAction(this.gameObject);
         }
+    }
+
+    public void Damage(float amount)
+    {
+        Stat statHealth = statsHandler.GetStat("Health");
+        if (statHealth != null)
+        {
+            statHealth.ChangeValue(-amount);
+            if (statHealth.isMin)
+            {
+                Kill();
+            }
+        }
+        else
+        {
+            Debug.LogError("Stat Health not found");
+        }
+    }
+
+    public void GivePoints(int amount)
+    {
+        Stat statEnergy = statsHandler.GetStat("Energy");
+        if (statEnergy != null)
+        {
+            statEnergy.ChangeValue(amount);
+        }
+        else
+        {
+            Debug.LogError("Stat Energy not found");
+        }
+    }
+
+    private void Kill()
+    {
+        Debug.Log("Died");
+        Destroy(this.gameObject);
     }
 }
