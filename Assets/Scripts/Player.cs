@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Player : MonoBehaviour
     private StatsHandler statsHandler;
 
     private Vector3 moveDelta;
+
+    [Header("Debug")]
+    public Logger logger;
 
     [SerializeField]
     private float moveSpeed = 2f;
@@ -70,7 +74,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Stat Health not found");
+            logger.LogError("Stat Health not found", this);
         }
     }
 
@@ -83,13 +87,14 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Stat Energy not found");
+            logger.LogError("Stat Energy not found", this);
         }
     }
 
     private void Kill()
     {
-        Debug.Log("Died");
+        logger.Log("Died", this);
         Destroy(this.gameObject);
+        SceneManager.LoadScene("MainMenu");
     }
 }
