@@ -47,17 +47,36 @@ public class Player : MonoBehaviour
         rigidBody.MovePosition(transform.position + moveDelta);
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Interact"))
+        {
+            Interact();
+        }
+    }
+
     private void FixedUpdate()
     {
         Movement();
     }
 
+    private void Interact()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 0.75f);
+        colliders = colliders.Where((Collider2D c) => c.GetComponent<IInteractable>() != null).ToArray();
+        if (colliders.Count() > 0)
+        {
+            Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            colliders.OrderBy((Collider2D c) => Vector3.Distance(cursorPos, c.gameObject.transform.position)).First().GetComponent<IInteractable>().interactionAction(this.gameObject);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Entity entity = collider.GetComponent<Entity>();
-        if (entity != null)
+        ICollidable collidable = collider.GetComponent<ICollidable>();
+        if (collidable != null)
         {
-            entity.collideAction(this.gameObject);
+            collidable.collideAction(this.gameObject);
         }
     }
 
