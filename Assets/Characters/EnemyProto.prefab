@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2617979393310820083}
   - component: {fileID: 7909990688230874240}
-  - component: {fileID: 5418074804645777494}
-  - component: {fileID: 8893651521680677848}
+  - component: {fileID: 5110754839686214253}
+  - component: {fileID: 8484838566924272830}
   - component: {fileID: 8425145075982842725}
   m_Layer: 9
   m_Name: EnemyProto
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!61 &5418074804645777494
+  m_SpriteSortPoint: 1
+--- !u!61 &5110754839686214253
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.101}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.09}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -130,10 +130,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34, y: 0.605}
+  m_Size: {x: 0.34, y: 0.34}
   m_EdgeRadius: 0
---- !u!70 &8893651521680677848
-CapsuleCollider2D:
+--- !u!58 &8484838566924272830
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,9 +164,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.025}
-  m_Size: {x: 0.7, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
 --- !u!114 &8425145075982842725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,3 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c0cddb33f0ed448a957215917cb2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageValue: 25

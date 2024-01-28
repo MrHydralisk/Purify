@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2617979393310820083}
   - component: {fileID: 7909990688230874240}
   - component: {fileID: 5418074804645777494}
-  - component: {fileID: 8893651521680677848}
+  - component: {fileID: 5673686458002695143}
   - component: {fileID: -6866949166524670737}
   m_Layer: 9
   m_Name: HealItemProto
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &5418074804645777494
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,10 +119,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.101}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.078}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -130,10 +130,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34, y: 0.605}
+  m_Size: {x: 0.34, y: 0.34}
   m_EdgeRadius: 0
---- !u!70 &8893651521680677848
-CapsuleCollider2D:
+--- !u!58 &5673686458002695143
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,9 +164,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.025}
-  m_Size: {x: 0.7, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
 --- !u!114 &-6866949166524670737
 MonoBehaviour:
   m_ObjectHideFlags: 0
