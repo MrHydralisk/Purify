@@ -31,7 +31,9 @@ public class Player : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
         float mult = Input.GetAxisRaw("Sprint");
 
-        moveDelta = new Vector3(x, y, 0) * moveSpeed * (1 + mult * sprintSpeedMult) * Time.deltaTime;
+        float mult2 = moveSpeed * (1 + mult * sprintSpeedMult) * Time.deltaTime;
+        moveDelta = new Vector3(x * mult2, y * mult2, 0);
+
 
         //Mirror sprite direction
         if (moveDelta.x > 0)
@@ -47,6 +49,11 @@ public class Player : MonoBehaviour
         rigidBody.MovePosition(transform.position + moveDelta);
     }
 
+    private void FixedUpdate()
+    {
+        Movement();
+    }
+
     private void Update()
     {
         if (Input.GetButtonDown("Interact"))
@@ -55,23 +62,33 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        Movement();
-    }
-
     private void Interact()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, 0.75f);
-        colliders = colliders.Where((Collider2D c) => c.GetComponent<IInteractable>() != null).ToArray();
-        if (colliders.Count() > 0)
+        int collidersCount = colliders.Count();
+        Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        IInteractable interactable = null;
+        float minValue = float.MaxValue;
+        for (int i = 0; i < collidersCount; i++)
         {
-            Vector3 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            colliders.OrderBy((Collider2D c) => Vector3.Distance(cursorPos, c.gameObject.transform.position)).First().GetComponent<IInteractable>().interactionAction(this.gameObject);
+            IInteractable inter = colliders[i].GetComponent<IInteractable>();
+            if (inter != null)
+            {
+                float dist = Vector3.Distance(cursorPos, colliders[i].transform.position);
+                if (dist < minValue)
+                {
+                    interactable = inter;
+                    minValue = dist;
+                }
+            }
+        }
+        if (interactable != null)
+        {
+            interactable.interactionAction(this.gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+        private void OnTriggerEnter2D(Collider2D collider)
     {
         ICollidable collidable = collider.GetComponent<ICollidable>();
         if (collidable != null)

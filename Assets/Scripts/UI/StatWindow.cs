@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +17,12 @@ public class StatWindow : MonoBehaviour
 
     private void Redraw()
     {
-        panel.text = "";
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < statsHandler.stats.Count; i++)
         {
             Stat stat = statsHandler.stats[i];
-            panel.text += stat.ToString() + "\n";
+            stringBuilder.AppendLine(stat.ToString());
         }
+        panel.text = stringBuilder.ToString();
     }
 }
