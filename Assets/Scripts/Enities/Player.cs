@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
     private StatsHandler statsHandler;
+    private SpriteRenderer spriteRenderer;
 
     private Vector3 moveDelta;
 
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         statsHandler = GetComponent<StatsHandler>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Movement()
@@ -38,11 +40,11 @@ public class Player : MonoBehaviour
         //Mirror sprite direction
         if (moveDelta.x > 0)
         {
-            transform.localScale = Vector3.one;
+            spriteRenderer.flipX = false;
         }
         else if (moveDelta.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
         }
 
         //Move
