@@ -12,13 +12,13 @@ public class Player : MonoBehaviour
 
     private Vector3 moveDelta;
 
-    [Header("Debug")]
-    public Logger logger;
-
     [SerializeField]
     private float moveSpeed = 2f;
     [SerializeField]
     private float sprintSpeedMult = 1f;
+
+    [Header("Debug")]
+    public Logger logger;
 
     private void Start()
     {
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         }
         if (interactable != null)
         {
-            interactable.interactionAction(this.gameObject);
+            interactable.InteractionAction(this.gameObject);
         }
     }
 
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         ICollidable collidable = collider.GetComponent<ICollidable>();
         if (collidable != null)
         {
-            collidable.collideAction(this.gameObject);
+            collidable.CollideAction(this.gameObject);
         }
     }
 

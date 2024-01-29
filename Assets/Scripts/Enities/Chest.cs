@@ -7,7 +7,7 @@ public class Chest : Thing, IInteractable
     [SerializeField]
     private int energyValue = 5;
 
-    public void interactionAction(GameObject interactionSource)
+    public void InteractionAction(GameObject interactionSource)
     {
         interactionSource.GetComponent<Player>()?.GivePoints(energyValue);
         Destroy(this.gameObject);

@@ -7,7 +7,7 @@ public class Enemy : Creature, ICollidable
     [SerializeField]
     private float damageValue = 25;
 
-    public void collideAction(GameObject collider)
+    public void CollideAction(GameObject collider)
     {
         Player player = collider.GetComponent<Player>();
         if (player != null)

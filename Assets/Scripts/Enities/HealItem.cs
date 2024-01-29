@@ -7,7 +7,7 @@ public class HealItem : Thing, ICollidable
     [SerializeField]
     private float healValue = 30;
 
-    public void collideAction(GameObject collider)
+    public void CollideAction(GameObject collider)
     {
         collider.GetComponent<Player>()?.Damage(-healValue);
         Destroy(this.gameObject);
