@@ -6,13 +6,15 @@ public class Enemy : Creature, ICollidable
 {
     [SerializeField]
     private float damageValue = 25;
+    [SerializeField]
+    private int enemiesAmount = 1;
 
     public void CollideAction(GameObject collider)
     {
         Player player = collider.GetComponent<Player>();
         if (player != null)
         {
-            player.Damage(damageValue);
+            CombatManager.instance.InitiateCombat(enemiesAmount);
             player.GivePoints(1);
         }
         Destroy(this.gameObject);
