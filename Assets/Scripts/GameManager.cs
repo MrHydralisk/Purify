@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     public Player player;
-    private bool isGamePaused = false;
+    public bool isGamePaused { get; private set; }
 
     private void Start()
     {

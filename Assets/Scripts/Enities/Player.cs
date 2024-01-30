@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
-    private StatsHandler statsHandler;
+    public StatsHandler statsHandler { get; private set; }
     private SpriteRenderer spriteRenderer;
 
     private Vector3 moveDelta;
@@ -53,14 +53,20 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement();
+        if (!GameManager.instance.isGamePaused)
+        {
+            Movement();
+        }
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Interact"))
+        if (!GameManager.instance.isGamePaused)
         {
-            Interact();
+            if (Input.GetButtonDown("Interact"))
+            {
+                Interact();
+            }
         }
     }
 

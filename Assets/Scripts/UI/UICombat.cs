@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class UICombatEnemies : MonoBehaviour
+public class UICombat : MonoBehaviour
 {
     [SerializeField]
     private List<UICombatEnemiesRow> UIEnemiesRows;
-    private List<GameObject> cachedUIEnemyPositions;
-    public List<GameObject> UIEnemyPositions 
+    private List<Transform> cachedUIEnemyPositions;
+    public List<Transform> UIEnemyPositions 
     {
         get 
         { 
             return cachedUIEnemyPositions ?? (cachedUIEnemyPositions = UIEnemiesRows.SelectMany((UICombatEnemiesRow row) => row.UIEnemyPositions).ToList()); 
         }
     }
+    [SerializeField]
+    public Transform UICharacterGrid;
 }

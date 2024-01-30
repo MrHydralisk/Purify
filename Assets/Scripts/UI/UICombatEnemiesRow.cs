@@ -5,5 +5,5 @@ using UnityEngine;
 public class UICombatEnemiesRow : MonoBehaviour
 {
     [SerializeField]
-    public List<GameObject> UIEnemyPositions;
+    public List<Transform> UIEnemyPositions;
 }

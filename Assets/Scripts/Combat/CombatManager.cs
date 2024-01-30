@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 
 public class CombatManager : MonoBehaviour
@@ -8,28 +9,50 @@ public class CombatManager : MonoBehaviour
     public static CombatManager instance { get; private set; }
 
     public List<CombatCreature> enemies;
+    public List<CombatCharacter> playerCharacters;
 
     [SerializeField]
-    private UICombatEnemies UIElements;
+    private UICombat UIElements;
 
     [SerializeField]
     private GameObject UIEnemyPrefab;
-
     [SerializeField]
-    private GameObject CombatUI;
+    private GameObject UICharacterPrefab;
 
-    public void InitiateCombat(int EnemyCount = 1/*List<CombatEnemyType> combatEnemyTypes*/)
+    private void InitiateCombat(int EnemyCount = 1/*List<CombatEnemyType> combatEnemyTypes*/)
     {
-        StartBattle(); //Temp
-
         enemies = new List<CombatCreature>();
 
         for (int i = 0; i < EnemyCount; i++)
         {
             CombatCreature cc = new CombatCreature();
-            GameObject go = Instantiate(UIEnemyPrefab, UIElements.UIEnemyPositions.First(g => g.transform.childCount == 0).transform);
+            GameObject go = Instantiate(UIEnemyPrefab, UIElements.UIEnemyPositions.First(g => g.childCount == 0));
             cc.UIElements = go.GetComponent<UICombatEnemy>();
             enemies.Add(cc);
+        }
+
+        playerCharacters = new List<CombatCharacter>();
+
+        for (int i = 0; i < 1; i++)
+        {
+            CombatCharacter cc = new CombatCharacter();
+            GameObject go = Instantiate(UICharacterPrefab, UIElements.UICharacterGrid);
+            cc.UIElements = go.GetComponent<UICombatCharacter>();
+            playerCharacters.Add(cc);
+        }
+
+        UpdatePlayerCharacterStats();
+    }
+
+    public void CleanCombat()
+    {
+        for (int i = UIElements.UICharacterGrid.childCount - 1; i >= 0; i--)
+        {
+            Destroy(UIElements.UICharacterGrid.GetChild(i).gameObject);
+        }
+        for (int i = enemies.Count() - 1; i >= 0; i--)
+        {
+            Destroy(enemies[i].UIElements.gameObject);
         }
     }
 
@@ -42,25 +65,36 @@ public class CombatManager : MonoBehaviour
         EndTurn();
     }
 
+    public void DestroyEnemy(CombatCreature combatCreature)
+    {
+        enemies.Remove(combatCreature);
+        Destroy(combatCreature.UIElements.gameObject);
+    }
+
+    public void AttackPlayerCharacter()
+    {
+        GameManager.instance.player.Damage(1);
+        UpdatePlayerCharacterStats();
+    }
+
+    public void UpdatePlayerCharacterStats()
+    {
+        playerCharacters.First().UIElements.RedrawStats(GameManager.instance.player.statsHandler);
+    }
+
     private void EndTurn()
     {
         if (enemies.Count > 0)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
-                GameManager.instance.player.Damage(1);
+                AttackPlayerCharacter();
             }
         }
         else
         {
             EndBattle();
         }
-    }
-
-    public void DestroyEnemy(CombatCreature combatCreature)
-    {
-        enemies.Remove(combatCreature);
-        Destroy(combatCreature.UIElements.gameObject);
     }
 
     private void Start()
@@ -71,19 +105,21 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    private void StartBattle()
+    public void StartBattle(int EnemyCount = 1/*List<CombatEnemyType> combatEnemyTypes*/)
     {
         UIManager.instance.DisableUI();
         GameManager.instance.PauseGame();
-        CombatUI.SetActive(true);
+        InitiateCombat(EnemyCount);
+        UIElements.gameObject.SetActive(true);
         Debug.Log("Battle start");
     }
 
     private void EndBattle()
     {
         Debug.Log("Battle end");
-        UIManager.instance.EnableUI();
+        UIManager.instance.EnableUI(); 
+        CleanCombat();
         GameManager.instance.ResumeGame();
-        CombatUI.SetActive(false);
+        UIElements.gameObject.SetActive(false);
     }
 }

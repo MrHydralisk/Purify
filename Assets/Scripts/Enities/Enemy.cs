@@ -14,7 +14,7 @@ public class Enemy : Creature, ICollidable
         Player player = collider.GetComponent<Player>();
         if (player != null)
         {
-            CombatManager.instance.InitiateCombat(enemiesAmount);
+            CombatManager.instance.StartBattle(enemiesAmount);
             player.GivePoints(1);
         }
         Destroy(this.gameObject);
