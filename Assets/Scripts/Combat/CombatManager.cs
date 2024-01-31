@@ -28,6 +28,7 @@ public class CombatManager : MonoBehaviour
             CombatCreature cc = new CombatCreature();
             GameObject go = Instantiate(UIEnemyPrefab, UIElements.UIEnemyPositions.First(g => g.childCount == 0));
             cc.UIElements = go.GetComponent<UICombatEnemy>();
+            cc.UIElements.SetHealth(cc.HP);
             enemies.Add(cc);
         }
 
@@ -64,7 +65,16 @@ public class CombatManager : MonoBehaviour
     {
         if (enemies.Count > 0)
         {
-            enemies.First()?.Damage(50);
+            CombatCreature cc = enemies.First();
+            if (cc != null)
+            {
+                cc.Damage(50);
+                cc.UIElements.SetHealth(cc.HP);
+            }
+            else
+            {
+                Debug.LogError("Combat Enemy not found");
+            }
         }
         EndTurn();
     }

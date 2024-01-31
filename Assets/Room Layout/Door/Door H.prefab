@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -381088140, guid: 0901c45d93301dc44b0fae23108869a1, type: 3}
-  m_Color: {r: 0.29803923, g: 0.29411766, b: 0.29803923, a: 1}
+  m_Color: {r: 0.36862746, g: 0.36862746, b: 0.36862746, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,6 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbcb94ee678b0b4cb6ae1485787dd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLocked: 1
+  relatedPanel: {fileID: 0}
 --- !u!61 &7885091655566664108
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -319,7 +321,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -381088140, guid: 0901c45d93301dc44b0fae23108869a1, type: 3}
-  m_Color: {r: 0.29803923, g: 0.29411766, b: 0.29803923, a: 1}
+  m_Color: {r: 0.36900002, g: 0.36900002, b: 0.36900002, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

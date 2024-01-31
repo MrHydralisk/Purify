@@ -5,7 +5,7 @@ using UnityEngine;
 public class CombatCreature
 {
     public UICombatEnemy UIElements;
-    private float HP = 100;
+    public float HP = 100;
 
     public void Damage(float amount)
     {

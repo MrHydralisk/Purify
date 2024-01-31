@@ -3878,7 +3878,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.645, g: 0.6418382, b: 0.645, a: 1}
   m_Origin: {x: -9, y: -7, z: 0}
   m_Size: {x: 26, y: 15, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -6589,7 +6589,7 @@ Tilemap:
     m_Data: {r: 3.781e-41, g: 3.781e-41, b: 3.781e-41, a: 3.781e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.29799998, g: 0.29348484, b: 0.29799998, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_Origin: {x: -10, y: -8, z: 0}
   m_Size: {x: 28, y: 17, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -9021,11 +9021,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door H
-      objectReference: {fileID: 0}
-    - target: {fileID: 8661980003527199154, guid: c96203affcd4a2b43b1c887a00dc57f4,
-        type: 3}
-      propertyPath: isLocked
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8661980003527199154, guid: c96203affcd4a2b43b1c887a00dc57f4,
         type: 3}
