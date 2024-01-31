@@ -17,4 +17,6 @@ public class UICombat : MonoBehaviour
     }
     [SerializeField]
     public Transform UICharacterGrid;
+    [SerializeField]
+    public UICombatSelectedCharacter UISelectedCharacter;
 }

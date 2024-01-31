@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0f;
+        //Temp
+        //Time.timeScale = 0f;
         isGamePaused = true;
     }
 

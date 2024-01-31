@@ -42,10 +42,14 @@ public class CombatManager : MonoBehaviour
         }
 
         UpdatePlayerCharacterStats();
+
+        UIElements.UISelectedCharacter.OpenSidePanel();
     }
 
     public void CleanCombat()
     {
+        UIElements.UISelectedCharacter.CloseSidePanel();
+
         for (int i = UIElements.UICharacterGrid.childCount - 1; i >= 0; i--)
         {
             Destroy(UIElements.UICharacterGrid.GetChild(i).gameObject);
@@ -109,12 +113,12 @@ public class CombatManager : MonoBehaviour
     {
         UIManager.instance.DisableUI();
         GameManager.instance.PauseGame();
-        InitiateCombat(EnemyCount);
         UIElements.gameObject.SetActive(true);
+        InitiateCombat(EnemyCount);
         Debug.Log("Battle start");
     }
 
-    private void EndBattle()
+    private void EndBattle() //Do in Coroutine for animated end
     {
         Debug.Log("Battle end");
         UIManager.instance.EnableUI(); 
