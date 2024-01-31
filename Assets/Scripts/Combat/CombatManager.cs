@@ -11,6 +11,8 @@ public class CombatManager : MonoBehaviour
     public List<CombatCreature> enemies;
     public List<CombatCharacter> playerCharacters;
 
+    private Enemy sourceEnemy;
+
     public CombatCreature selectedEnemy { get; private set; }
 
     [SerializeField]
@@ -153,8 +155,9 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void StartBattle(int EnemyCount = 1/*List<CombatEnemyType> combatEnemyTypes*/)
+    public void StartBattle(int EnemyCount = 1, Enemy SourceEnemy = null/*List<CombatEnemyType> combatEnemyTypes*/)
     {
+        sourceEnemy = SourceEnemy;
         UIManager.instance.DisableUI();
         GameManager.instance.PauseGame();
         UIElements.gameObject.SetActive(true);
@@ -169,5 +172,9 @@ public class CombatManager : MonoBehaviour
         CleanCombat();
         GameManager.instance.ResumeGame();
         UIElements.gameObject.SetActive(false);
+        if (sourceEnemy  != null)
+        {
+            sourceEnemy.CombatFinished();
+        }
     }
 }
