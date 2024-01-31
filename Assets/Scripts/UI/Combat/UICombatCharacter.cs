@@ -7,16 +7,10 @@ using UnityEngine.UI;
 public class UICombatCharacter : MonoBehaviour
 {
     [SerializeField]
-    private Text panelStats;
+    private UIStat statHP;
 
     public void RedrawStats(StatsHandler statsHandler)
     {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < statsHandler.stats.Count; i++)
-        {
-            Stat stat = statsHandler.stats[i];
-            stringBuilder.AppendLine(stat.ToString());
-        }
-        panelStats.text = stringBuilder.ToString();
+        statHP.RedrawStats(statsHandler.stats[0]);
     }
 }

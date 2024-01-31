@@ -4,10 +4,24 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UICombatEnemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UICombatEnemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    public CombatCreature combatCreature;
     public Slider sliderHP;
     public Image image;
+    public GameObject selectedIcon;
+    public bool isSelected
+    {
+        get
+        {
+            return selectedIcon.activeSelf;
+        }
+        set
+        {
+            selectedIcon.SetActive(value);
+            ShowHealth(value);
+        }
+    }
 
     private void Start()
     {
@@ -20,14 +34,27 @@ public class UICombatEnemy : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         sliderHP.value = value;
     }
 
+    public void ShowHealth(bool value = true)
+    {
+        sliderHP.gameObject.SetActive(value);
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
-        sliderHP.gameObject.SetActive(true);
+        ShowHealth(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        sliderHP.gameObject.SetActive(false);
+        if (!isSelected)
+        {
+            ShowHealth(false);
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        CombatManager.instance.ChangeSelectedEnemy(combatCreature);
     }
 }
         

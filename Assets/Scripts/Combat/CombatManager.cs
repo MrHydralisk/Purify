@@ -11,6 +11,8 @@ public class CombatManager : MonoBehaviour
     public List<CombatCreature> enemies;
     public List<CombatCharacter> playerCharacters;
 
+    public CombatCreature selectedEnemy { get; private set; }
+
     [SerializeField]
     private UICombat UIElements;
 
@@ -18,6 +20,14 @@ public class CombatManager : MonoBehaviour
     private GameObject UIEnemyPrefab;
     [SerializeField]
     private GameObject UICharacterPrefab;
+
+    private void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     private void InitiateCombat(int EnemyCount = 1/*List<CombatEnemyType> combatEnemyTypes*/)
     {
@@ -28,9 +38,12 @@ public class CombatManager : MonoBehaviour
             CombatCreature cc = new CombatCreature();
             GameObject go = Instantiate(UIEnemyPrefab, UIElements.UIEnemyPositions.First(g => g.childCount == 0));
             cc.UIElements = go.GetComponent<UICombatEnemy>();
+            cc.UIElements.combatCreature = cc;
             cc.UIElements.SetHealth(cc.HP);
             enemies.Add(cc);
         }
+
+        ChangeSelectedEnemy();
 
         playerCharacters = new List<CombatCharacter>();
 
@@ -65,7 +78,11 @@ public class CombatManager : MonoBehaviour
     {
         if (enemies.Count > 0)
         {
-            CombatCreature cc = enemies.First();
+            if (selectedEnemy == null || selectedEnemy.UIElements == null)
+            {
+                ChangeSelectedEnemy();
+            }
+            CombatCreature cc = selectedEnemy; 
             if (cc != null)
             {
                 cc.Damage(50);
@@ -83,6 +100,31 @@ public class CombatManager : MonoBehaviour
     {
         enemies.Remove(combatCreature);
         Destroy(combatCreature.UIElements.gameObject);
+        ChangeSelectedEnemy();
+    }
+
+    /// <summary>
+    /// Will select <c>selectedCreature</c> as target enemy
+    /// </summary>
+    public void ChangeSelectedEnemy(CombatCreature selectedCreature)
+    {
+        if (selectedCreature != null && selectedCreature.UIElements != null)
+        {
+            if (selectedEnemy != null && selectedEnemy.UIElements != null)
+            {
+                selectedEnemy.UIElements.isSelected = false;
+            }
+            selectedEnemy = selectedCreature;
+            selectedEnemy.UIElements.isSelected = true;
+        }
+    }
+
+    /// <summary>
+    /// Will select new first enemy as target
+    /// </summary>
+    public void ChangeSelectedEnemy()
+    {
+        ChangeSelectedEnemy(enemies.FirstOrDefault());
     }
 
     public void AttackPlayerCharacter()
@@ -108,14 +150,6 @@ public class CombatManager : MonoBehaviour
         else
         {
             EndBattle();
-        }
-    }
-
-    private void Start()
-    {
-        if (instance == null)
-        {
-            instance = this;
         }
     }
 
